@@ -1,0 +1,38 @@
+package main
+
+import "fmt"
+
+func main() {
+	// Contoh 1
+	fmt.Println("Contoh 1:")
+	fmt.Println("Permutasi:", permutation(5, 3))
+	fmt.Println("Kombinasi:", combination(5, 3))
+	fmt.Println("Faktorial:", factorial(5))
+
+	// Contoh 2
+	fmt.Println("\nContoh 2:")
+	fmt.Println("Permutasi:", permutation(10, 10))
+	fmt.Println("Kombinasi:", combination(10, 10))
+	fmt.Println("Faktorial:", factorial(10))
+}
+
+func factorial(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
+func permutation(n, r int) int {
+	if n >= r {
+		return factorial(n) / factorial(n-r)
+	}
+	return 0
+}
+
+func combination(n, r int) int {
+	if n >= r {
+		return factorial(n) / (factorial(r) * factorial(n-r))
+	}
+	return 0
+}
